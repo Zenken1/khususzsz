@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="jv">
+<head>
+  <meta charset="UTF-8">
+  <title>Surat Tresno Saka Zen</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #eee;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+    h1 {
+      font-size: 38px;
+      margin-top: 50px;
+      font-weight: bold;
+    }
+    p {
+      font-size: 22px;
+      margin: 30px 20px;
+      white-space: pre-line;
+      line-height: 1.6;
+    }
+    button {
+      padding: 15px 35px;
+      font-size: 20px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #5f2c82, #49a09d);
+      color: #fff;
+      cursor: pointer;
+      margin: 15px 5px;
+      transition: 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+    button:hover {
+      background: linear-gradient(135deg, #302b63, #0f0c29);
+    }
+  </style>
+</head>
+<body>
+
+<audio id="bgMusic" loop>
+  <source src="https://h.uguu.se/OankPHvN.mp3" type="audio/mpeg">
+</audio>
+
+<div id="pilihanMusik">
+  <h1>Sambil Putar Musik?</h1>
+  <button onclick="playMusic()">▶️ Play Musik</button>
+  <button onclick="skipMusic()">❌ Ora Usah Musik</button>
+</div>
+
+<div id="isiSurat" style="display:none;">
+  <h1>IKI SURAT KHUSUS SAKA ZEN KANGGO ALYA 💌</h1>
+
+  <p>
+  Halo Alya…
+  Aku pengen ngomong jujur soko njero atiku. Aku isih kelingan wektu pisanan ketemu kowe nang warung pas maghriban.
+  Awale aku pura-pura ora weruh, padahal salting pol cak! Aku ningali kowe, kowe ningali aku,
+  tapi aku apen-apen ndelok kali.
+
+  Saka dina iku, aku ora ngerti kenopo kok atiku dadi seneng mikir kowe.
+  Saben bengi rasane kepikiran wae, nganti ora ngerti kapan tresno iki diwiwiti.
+  Kowe iku kaya lintang neng langit wengi, sing nggawe atiku luwih padhang saben dino.
+
+  Aku pengen ngerti perasaanmu, Alya.
+  Yo piye? Gelem opo ora? Aku ora maksa, mung pengen ngerti atimu.
+
+  Nek gelem, langsung gas. Nek ora, tulung paring sebab, ben aku ngerti kudu mundur nang endi.
+  Nanging siji sing jelas, apapun jawabanmu, aku tetep seneng wis nate nduwe perasaan iki marang kowe.
+  </p>
+
+  <div style="margin-top:40px;">
+    <button onclick="terima()">❤️ Gelem</button>
+    <button onclick="tolak()">💔 Ora Gelem</button>
+  </div>
+
+  <div style="margin-top:30px;">
+    <button onclick="toggleMusic()">🎶 Play/Stop Musik</button>
+  </div>
+</div>
+
+<script>
+  let music = document.getElementById('bgMusic');
+
+  function playMusic() {
+    music.play();
+    document.getElementById('pilihanMusik').style.display = 'none';
+    document.getElementById('isiSurat').style.display = 'block';
+  }
+
+  function skipMusic() {
+    document.getElementById('pilihanMusik').style.display = 'none';
+    document.getElementById('isiSurat').style.display = 'block';
+  }
+
+  function toggleMusic() {
+    if (music.paused) {
+      music.play();
+    } else {
+      music.pause();
+    }
+  }
+
+  function terima() {
+    window.location.href = 'https://wa.me/6285182268119?text=GASS%20ZEN%20GUA%20%F0%9F%99%8F%F0%9F%92%95';
+  }
+
+  function tolak() {
+    let alasan = prompt('Wes tak ngerteni nek ditolak 😭. Tapi tulung paring sebabé rek…');
+    window.location.href = 'https://wa.me/6285182268119?text=Alasan%20Menolak:%20' + encodeURIComponent(alasan);
+  }
+</script>
+
+</body>
+</html>
